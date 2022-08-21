@@ -1,0 +1,29 @@
+.create-form {
+    display: flex;
+    flex-flow: column;
+    text-align: start;
+    padding: 1rem;
+    background-color: lightgrey;
+    border-radius: 5px;
+  }
+  
+  .create-form h4 {
+    text-align: center;
+  }
+  
+  .create-form>* {
+  margin: 0.25rem;
+  padding: 0.5rem;;
+  border-radius: 5px;
+  }
+  
+  .create-form button {
+    font-weight: bold;
+    letter-spacing: 2px;
+    background-color: orange;
+    margin-top: 1.5rem
+  }
+  
+  .create-form button:hover {
+    filter: brightness(1.1);
+  }

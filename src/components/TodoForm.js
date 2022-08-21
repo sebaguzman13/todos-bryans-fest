@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './TodoForm.css';
 
 const initialTodo = {
     title: '',
@@ -14,11 +15,15 @@ export const TodoForm = ({ onSubmit, userGroupId }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(newTodo);
-        setNewTodo({ ...initialTodo})
+        setNewTodo({ ...initialTodo })
     }
 
     const handleChange = (e) => {
         setNewTodo({ ...newTodo, [e.target.name]: e.target.value })
+    }
+
+    const handleIsCommentable = (e) => {
+        setNewTodo({ ...newTodo, isCommentable: !newTodo.isCommentable})
     }
 
     return (
@@ -31,7 +36,7 @@ export const TodoForm = ({ onSubmit, userGroupId }) => {
             <input type="text" name="content" value={newTodo.content} onChange={handleChange} />
 
             <label htmlFor="isCommentable">Accept comments ?</label>
-            <input type="checkbox" name="isCommentable" checked={newTodo.isCommentable} onChange={handleChange} />
+            <input type="checkbox" name="isCommentable" checked={newTodo.isCommentable} onChange={handleIsCommentable} />
 
             <button type="submit">ADD</button>
         </form>

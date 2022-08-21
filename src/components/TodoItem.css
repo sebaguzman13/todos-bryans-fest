@@ -1,0 +1,7 @@
+.todo-item {
+    margin: 0.5rem auto;
+    padding: 0.5rem;
+    background-color: azure;
+    border-radius: 10px;
+    border: 1px solid gray;
+  }

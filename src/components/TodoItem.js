@@ -1,8 +1,13 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import './TodoItem.css';
 
 export const TodoItem = ({ item, deleteItem, addComment, user }) => {
     const [comment, setComment] = useState('');
     const [isCommenting, setIsCommenting] = useState(false);
+
+    useEffect(() => {
+        setIsCommenting(false);
+    }, [user])
 
     const handleIsCommenting = () => {
         setIsCommenting(!isCommenting)
@@ -17,19 +22,19 @@ export const TodoItem = ({ item, deleteItem, addComment, user }) => {
     }
 
     const canComment = () => {
-        return item.ownerGroupId === user.groupId;
+        return item.isCommentable && item.ownerGroupId === user.groupId;
     }
 
     const handleSubmit = (e) => {
         e.preventDefault();
         addComment(comment, item.id);
+        setIsCommenting(false);
         setComment('');
     }
 
     return (
         <article className="todo-item">
             <h5>{item.title}</h5>
-            <p>{item.ownerGroupId}</p>
             <p>{item.content}</p>
 
             <button onClick={handleDelete}>DELETE</button>

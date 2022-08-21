@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './TodoList.css';
 import TodoForm from "./TodoForm";
 import TodoItem from "./TodoItem";
 
@@ -60,6 +61,8 @@ export const TodosList = () => {
             </section>
             <section>
                 <TodoForm onSubmit={handleAdd} />
+            </section>
+            <section>
                 {todos?.map((todo, index) => (
                     <TodoItem
                         key={`${index}-${todo.id}`}
