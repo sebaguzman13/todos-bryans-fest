@@ -15,24 +15,53 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+main {
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.create-form {
+  display: flex;
+  flex-flow: column;
+  text-align: start;
+  padding: 1rem;
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.create-form h4 {
+  text-align: center;
+}
+
+.create-form>* {
+margin: 0.25rem;
+padding: 0.5rem;;
+border-radius: 5px;
+}
+
+.create-form button {
+  font-weight: bold;
+  letter-spacing: 2px;
+  background-color: orange;
+  margin-top: 1.5rem
+}
+
+.create-form button:hover {
+  filter: brightness(1.1);
+}
+
+.todo-item {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  background-color: azure;
+  border-radius: 10px;
+  border: 1px solid gray;
 }
